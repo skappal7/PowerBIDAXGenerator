@@ -275,108 +275,133 @@ RETURN HTML'''
 def load_custom_css():
     st.markdown("""
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600;700&display=swap');
     
-    * {font-family: 'Inter', sans-serif;}
+    * {font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;}
     
-    .main {background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);}
-    .block-container {padding: 1.5rem; max-width: 1400px;}
+    .main {background: #ffffff;}
+    .block-container {padding: 2rem 3rem; max-width: 1600px;}
     
-    .step-container {
-        background: white;
-        border-radius: 16px;
-        padding: 32px;
-        margin-bottom: 24px;
-        box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-        border: 1px solid #e2e8f0;
-    }
-    
-    .step-header {
-        font-size: 28px;
-        font-weight: 700;
-        color: #1e293b;
-        margin-bottom: 8px;
-    }
-    
-    .step-desc {
-        font-size: 15px;
-        color: #64748b;
-        margin-bottom: 24px;
-    }
+    .stApp {background: #ffffff;}
     
     div[data-testid="stFileUploader"] {
-        background: #f8fafc;
-        border: 2px dashed #cbd5e1;
-        border-radius: 12px;
-        padding: 24px;
-        transition: all 0.3s;
-    }
-    
-    div[data-testid="stFileUploader"]:hover {
-        border-color: #667eea;
-        background: #f1f5f9;
+        background: #fafafa;
+        border: 1px solid #e0e0e0;
+        border-radius: 4px;
+        padding: 20px;
     }
     
     .stButton>button {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: #0078d4;
         color: white;
         border: none;
-        padding: 12px 32px;
-        border-radius: 10px;
+        padding: 10px 24px;
+        border-radius: 2px;
         font-weight: 600;
-        font-size: 15px;
-        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
-        transition: all 0.3s;
+        font-size: 14px;
+        transition: background 0.2s;
     }
     
     .stButton>button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(102, 126, 234, 0.5);
+        background: #106ebe;
     }
     
     .metric-box {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        padding: 20px;
-        border-radius: 12px;
-        color: white;
-        text-align: center;
+        background: #f5f5f5;
+        padding: 16px;
+        border-radius: 2px;
+        border-left: 3px solid #0078d4;
     }
     
     .metric-value {
-        font-size: 36px;
+        font-size: 32px;
         font-weight: 700;
+        color: #323130;
         margin-bottom: 4px;
     }
     
     .metric-label {
-        font-size: 13px;
-        opacity: 0.9;
+        font-size: 12px;
+        color: #605e5c;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
     }
     
     div[data-testid="stExpander"] {
-        background: #f8fafc;
-        border-radius: 10px;
-        border: 1px solid #e2e8f0;
+        background: #fafafa;
+        border-radius: 2px;
+        border: 1px solid #e0e0e0;
     }
     
-    .success-banner {
-        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-        color: white;
-        padding: 24px;
-        border-radius: 12px;
-        margin: 20px 0;
-        box-shadow: 0 4px 16px rgba(16, 185, 129, 0.3);
+    .success-box {
+        background: #dff6dd;
+        color: #107c10;
+        padding: 16px;
+        border-radius: 2px;
+        margin: 16px 0;
+        border-left: 3px solid #107c10;
     }
     
-    h1, h2, h3 {color: white;}
+    h1 {
+        color: #323130;
+        font-size: 32px;
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
+    
+    h2 {
+        color: #323130;
+        font-size: 20px;
+        font-weight: 600;
+    }
+    
+    h3 {
+        color: #323130;
+        font-size: 16px;
+        font-weight: 600;
+    }
+    
+    .stTabs [data-baseweb="tab-list"] {
+        gap: 0px;
+        border-bottom: 1px solid #e0e0e0;
+    }
+    
+    .stTabs [data-baseweb="tab"] {
+        background: transparent;
+        color: #605e5c;
+        border-radius: 0;
+        padding: 12px 24px;
+        font-weight: 600;
+        font-size: 14px;
+        border-bottom: 2px solid transparent;
+    }
+    
+    .stTabs [aria-selected="true"] {
+        background: transparent;
+        color: #0078d4;
+        border-bottom: 2px solid #0078d4;
+    }
     
     .stSlider {margin-bottom: 8px;}
     
     code {
-        background: #1e293b !important;
-        color: #e2e8f0 !important;
+        background: #1e1e1e !important;
+        color: #d4d4d4 !important;
         padding: 16px !important;
-        border-radius: 10px !important;
+        border-radius: 2px !important;
+        font-family: 'Consolas', 'Courier New', monospace !important;
+    }
+    
+    .section-card {
+        background: #fafafa;
+        padding: 20px;
+        border-radius: 2px;
+        border: 1px solid #e0e0e0;
+        margin-bottom: 16px;
+    }
+    
+    .stMultiSelect {
+        background: white;
     }
     </style>
     """, unsafe_allow_html=True)
@@ -384,24 +409,17 @@ def load_custom_css():
 def main():
     load_custom_css()
     
-    st.markdown("<h1 style='font-size:48px; margin-bottom:8px;'>⚡ Power BI DAX Generator</h1>", unsafe_allow_html=True)
-    st.markdown("<h2 style='font-size:20px; font-weight:400; margin-top:0; opacity:0.9;'>Create HTML narratives with perfect DAX syntax</h2>", unsafe_allow_html=True)
+    st.markdown("<h1>Power BI DAX Generator</h1>", unsafe_allow_html=True)
+    st.markdown("<p style='color:#605e5c; font-size:14px; margin-bottom:24px;'>Generate HTML-based DAX narratives with intelligent threshold logic</p>", unsafe_allow_html=True)
     
-    if 'step' not in st.session_state:
-        st.session_state.step = 1
     if 'analysis' not in st.session_state:
         st.session_state.analysis = None
     
-    # Progress indicator
-    progress = st.session_state.step / 4
-    st.progress(progress)
-    st.markdown(f"<p style='text-align:center; color:white; font-size:14px; margin-top:8px;'>Step {st.session_state.step} of 4</p>", unsafe_allow_html=True)
+    tabs = st.tabs(["📁 Data Setup", "⚙️ Metrics & Thresholds", "📋 Sections & Design", "🚀 Generate DAX"])
     
-    # STEP 1: Upload Data
-    if st.session_state.step == 1:
-        st.markdown("<div class='step-container'>", unsafe_allow_html=True)
-        st.markdown("<div class='step-header'>📁 Step 1: Upload Your Data</div>", unsafe_allow_html=True)
-        st.markdown("<div class='step-desc'>Upload the data file that matches your Power BI table structure</div>", unsafe_allow_html=True)
+    # TAB 1: Data Setup
+    with tabs[0]:
+        st.markdown("<div class='section-card'>", unsafe_allow_html=True)
         
         col1, col2 = st.columns([2, 1])
         
@@ -451,23 +469,20 @@ def main():
             st.session_state.table_name = table_name
         
         st.markdown("</div>", unsafe_allow_html=True)
-        
-        if st.session_state.analysis:
-            if st.button("Continue to Configuration →", use_container_width=True):
-                st.session_state.step = 2
-                st.rerun()
     
-    # STEP 2: Configure Metrics
-    elif st.session_state.step == 2:
-        st.markdown("<div class='step-container'>", unsafe_allow_html=True)
-        st.markdown("<div class='step-header'>⚙️ Step 2: Configure Metrics</div>", unsafe_allow_html=True)
-        st.markdown("<div class='step-desc'>Select metrics and set thresholds using intelligent sliders</div>", unsafe_allow_html=True)
+    # TAB 2: Configure Metrics
+    with tabs[1]:
+        if 'analysis' not in st.session_state or not st.session_state.analysis:
+            st.info("👈 Upload data first in the Data Setup tab")
+        else:
+            analysis = st.session_state.analysis
+            df = st.session_state.df
+            
+            st.markdown("<div class='section-card'>", unsafe_allow_html=True)
+            st.markdown("<h2>Configure Metrics & Thresholds</h2>", unsafe_allow_html=True)
         
-        analysis = st.session_state.analysis
-        df = st.session_state.df
-        
-        st.markdown("**Select Primary Metrics**")
-        metric_configs = []
+            st.markdown("**Select Primary Metrics**")
+            metric_configs = []
         
         for i, num_col in enumerate(analysis['numeric_cols'][:3]):
             with st.expander(f"📊 {num_col['name']}", expanded=i==0):
@@ -608,45 +623,35 @@ def main():
                         'thresholds': thresholds
                     })
         
-        st.session_state.metric_configs = metric_configs
-        st.markdown("</div>", unsafe_allow_html=True)
-        
-        col1, col2 = st.columns(2)
-        with col1:
-            if st.button("← Back", use_container_width=True):
-                st.session_state.step = 1
-                st.rerun()
-        with col2:
-            if metric_configs and st.button("Continue to Sections →", use_container_width=True):
-                st.session_state.step = 3
-                st.rerun()
+            st.session_state.metric_configs = metric_configs
+            st.markdown("</div>", unsafe_allow_html=True)
     
-    # STEP 3: Select Sections
-    elif st.session_state.step == 3:
-        st.markdown("<div class='step-container'>", unsafe_allow_html=True)
-        st.markdown("<div class='step-header'>📋 Step 3: Choose Narrative Sections</div>", unsafe_allow_html=True)
-        st.markdown("<div class='step-desc'>Select which sections to include in your HTML narrative</div>", unsafe_allow_html=True)
+    # TAB 3: Select Sections
+    with tabs[2]:
+        if 'analysis' not in st.session_state or not st.session_state.analysis:
+            st.info("👈 Upload data first in the Data Setup tab")
+        else:
+            analysis = st.session_state.analysis
+            st.markdown("<div class='section-card'>", unsafe_allow_html=True)
+            st.markdown("<h2>Narrative Sections & Design</h2>", unsafe_allow_html=True)
         
-        analysis = st.session_state.analysis
-        
-        col1, col2 = st.columns(2)
-        
-        with col1:
-            st.markdown("**Always Included**")
-            st.checkbox("📊 Header & KPI Cards", value=True, disabled=True)
+            col1, col2 = st.columns(2)
             
-            st.markdown("**Optional Sections**")
-            
-            include_performance = False
-            performance_cat = None
-            if analysis['categorical_cols']:
-                include_performance = st.checkbox("📈 Performance Breakdown", value=True)
-                if include_performance:
-                    performance_cat = st.selectbox(
-                        "Group by:",
-                        [c['name'] for c in analysis['categorical_cols']],
-                        key="perf_cat"
-                    )
+            with col1:
+                st.markdown("**Section Configuration**")
+                st.checkbox("📊 Header & KPI Cards", value=True, disabled=True, key="header_check")
+                
+                include_performance = False
+                performance_cats = []
+                if analysis['categorical_cols']:
+                    include_performance = st.checkbox("📈 Performance Breakdown", value=True, key="perf_check")
+                    if include_performance:
+                        performance_cats = st.multiselect(
+                            "Select categories to analyze:",
+                            [c['name'] for c in analysis['categorical_cols']],
+                            default=[analysis['categorical_cols'][0]['name']] if analysis['categorical_cols'] else [],
+                            key="perf_cats"
+                        )
             
             include_verbatim = False
             verbatim_text = None
@@ -690,143 +695,133 @@ def main():
                 label_visibility="collapsed"
             )
         
-        st.session_state.sections = {
-            'performance': include_performance,
-            'performance_cat': performance_cat,
-            'verbatim': include_verbatim,
-            'verbatim_text': verbatim_text,
-            'verbatim_score': verbatim_score,
-            'theme': theme,
-            'title': report_title
-        }
-        
-        st.markdown("</div>", unsafe_allow_html=True)
-        
-        col1, col2 = st.columns(2)
-        with col1:
-            if st.button("← Back", use_container_width=True):
-                st.session_state.step = 2
-                st.rerun()
-        with col2:
-            if st.button("Generate DAX →", use_container_width=True):
-                st.session_state.step = 4
-                st.rerun()
+            st.session_state.sections = {
+                'performance': include_performance,
+                'performance_cats': performance_cats,
+                'verbatim': include_verbatim,
+                'verbatim_text': verbatim_text,
+                'verbatim_score': verbatim_score,
+                'theme': theme,
+                'title': report_title
+            }
+            
+            st.markdown("</div>", unsafe_allow_html=True)
     
-    # STEP 4: Generate
-    elif st.session_state.step == 4:
-        st.markdown("<div class='step-container'>", unsafe_allow_html=True)
-        st.markdown("<div class='step-header'>🚀 Step 4: Your DAX Code</div>", unsafe_allow_html=True)
-        
-        try:
-            table_name = st.session_state.table_name
-            theme = st.session_state.sections['theme']
-            builder = DAXBuilder(table_name, theme)
+    # TAB 4: Generate
+    with tabs[3]:
+        if 'metric_configs' not in st.session_state or not st.session_state.metric_configs:
+            st.info("👈 Configure metrics first in the Metrics & Thresholds tab")
+        else:
+            st.markdown("<div class='section-card'>", unsafe_allow_html=True)
+            st.markdown("<h2>Generate DAX Code</h2>", unsafe_allow_html=True)
             
-            dax_parts = [builder.build_header()]
+            try:
+                table_name = st.session_state.table_name
+                theme = st.session_state.sections['theme']
+                builder = DAXBuilder(table_name, theme)
+                
+                dax_parts = [builder.build_header()]
+                
+                # Add metric variables
+                for metric in st.session_state.metric_configs:
+                    dax_parts.append(builder.build_measure_var(
+                        metric['name'],
+                        metric['column'],
+                        metric['aggregation'],
+                        metric['decimals']
+                    ))
+                    dax_parts.append(builder.build_threshold_color(
+                        metric['name'],
+                        metric['thresholds']
+                    ))
+                
+                # Add performance variables if needed
+                if st.session_state.sections['performance'] and st.session_state.sections['performance_cats']:
+                    for cat in st.session_state.sections['performance_cats']:
+                        perf_vars, _ = builder.build_performance_table(
+                            cat,
+                            st.session_state.metric_configs[0]['column'],
+                            st.session_state.metric_configs[0]['aggregation']
+                        )
+                        dax_parts.append(perf_vars)
+                
+                # Add verbatim variables if needed
+                if st.session_state.sections['verbatim']:
+                    pos_vars, _ = builder.build_verbatim_section(
+                        st.session_state.sections['verbatim_text'],
+                        st.session_state.sections['verbatim_score'],
+                        'positive'
+                    )
+                    neg_vars, _ = builder.build_verbatim_section(
+                        st.session_state.sections['verbatim_text'],
+                        st.session_state.sections['verbatim_score'],
+                        'negative'
+                    )
+                    dax_parts.append(pos_vars)
+                    dax_parts.append(neg_vars)
+                
+                # Build HTML
+                dax_parts.append(builder.build_html_start())
+                dax_parts.append(builder.build_title_section(st.session_state.sections['title']))
+                
+                # KPI Cards
+                kpi_section = '"<div style=\'display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:16px; margin-bottom:28px;\'>" &'
+                for metric in st.session_state.metric_configs:
+                    kpi_section += "\n" + builder.build_kpi_card_html(metric['name'], metric['name'])
+                kpi_section += '\n"</div>" &'
+                dax_parts.append(kpi_section)
+                
+                # Performance tables for each category
+                if st.session_state.sections['performance'] and st.session_state.sections['performance_cats']:
+                    for cat in st.session_state.sections['performance_cats']:
+                        _, perf_html = builder.build_performance_table(
+                            cat,
+                            st.session_state.metric_configs[0]['column'],
+                            st.session_state.metric_configs[0]['aggregation']
+                        )
+                        dax_parts.append(perf_html)
+                
+                # Verbatim sections
+                if st.session_state.sections['verbatim']:
+                    _, pos_html = builder.build_verbatim_section(
+                        st.session_state.sections['verbatim_text'],
+                        st.session_state.sections['verbatim_score'],
+                        'positive'
+                    )
+                    _, neg_html = builder.build_verbatim_section(
+                        st.session_state.sections['verbatim_text'],
+                        st.session_state.sections['verbatim_score'],
+                        'negative'
+                    )
+                    dax_parts.append(pos_html)
+                    dax_parts.append(neg_html)
+                
+                dax_parts.append(builder.build_html_end())
+                
+                final_dax = "\n\n".join(dax_parts)
+                st.session_state.generated_dax = final_dax
+                
+                st.markdown("<div class='success-box'><strong>✓ DAX Code Generated Successfully</strong><br>Syntactically correct and ready for Power BI</div>", unsafe_allow_html=True)
+                
+                col1, col2, col3 = st.columns([2, 1, 1])
+                with col2:
+                    st.download_button(
+                        "💾 Download DAX",
+                        final_dax,
+                        "narrative.dax",
+                        "text/plain",
+                        use_container_width=True
+                    )
+                with col3:
+                    if st.button("📋 Copy Code", use_container_width=True):
+                        st.toast("Copied to clipboard!")
+                
+                st.code(final_dax, language='dax', line_numbers=True)
+                
+            except Exception as e:
+                st.error(f"Generation Error: {str(e)}")
             
-            # Add metric variables
-            for metric in st.session_state.metric_configs:
-                dax_parts.append(builder.build_measure_var(
-                    metric['name'],
-                    metric['column'],
-                    metric['aggregation'],
-                    metric['decimals']
-                ))
-                dax_parts.append(builder.build_threshold_color(
-                    metric['name'],
-                    metric['thresholds']
-                ))
-            
-            # Add performance variables if needed
-            if st.session_state.sections['performance']:
-                perf_vars, _ = builder.build_performance_table(
-                    st.session_state.sections['performance_cat'],
-                    st.session_state.metric_configs[0]['column'],
-                    st.session_state.metric_configs[0]['aggregation']
-                )
-                dax_parts.append(perf_vars)
-            
-            # Add verbatim variables if needed
-            if st.session_state.sections['verbatim']:
-                pos_vars, _ = builder.build_verbatim_section(
-                    st.session_state.sections['verbatim_text'],
-                    st.session_state.sections['verbatim_score'],
-                    'positive'
-                )
-                neg_vars, _ = builder.build_verbatim_section(
-                    st.session_state.sections['verbatim_text'],
-                    st.session_state.sections['verbatim_score'],
-                    'negative'
-                )
-                dax_parts.append(pos_vars)
-                dax_parts.append(neg_vars)
-            
-            # Build HTML
-            dax_parts.append(builder.build_html_start())
-            dax_parts.append(builder.build_title_section(st.session_state.sections['title']))
-            
-            # KPI Cards
-            kpi_section = '"<div style=\'display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:16px; margin-bottom:28px;\'>" &'
-            for metric in st.session_state.metric_configs:
-                kpi_section += "\n" + builder.build_kpi_card_html(metric['name'], metric['name'])
-            kpi_section += '\n"</div>" &'
-            dax_parts.append(kpi_section)
-            
-            # Performance table
-            if st.session_state.sections['performance']:
-                _, perf_html = builder.build_performance_table(
-                    st.session_state.sections['performance_cat'],
-                    st.session_state.metric_configs[0]['column'],
-                    st.session_state.metric_configs[0]['aggregation']
-                )
-                dax_parts.append(perf_html)
-            
-            # Verbatim sections
-            if st.session_state.sections['verbatim']:
-                _, pos_html = builder.build_verbatim_section(
-                    st.session_state.sections['verbatim_text'],
-                    st.session_state.sections['verbatim_score'],
-                    'positive'
-                )
-                _, neg_html = builder.build_verbatim_section(
-                    st.session_state.sections['verbatim_text'],
-                    st.session_state.sections['verbatim_score'],
-                    'negative'
-                )
-                dax_parts.append(pos_html)
-                dax_parts.append(neg_html)
-            
-            dax_parts.append(builder.build_html_end())
-            
-            final_dax = "\n\n".join(dax_parts)
-            st.session_state.generated_dax = final_dax
-            
-            st.markdown("<div class='success-banner'><h3 style='margin:0 0 8px 0;'>✅ DAX Code Generated Successfully!</h3><p style='margin:0; opacity:0.95;'>Syntactically perfect and ready to use in Power BI</p></div>", unsafe_allow_html=True)
-            
-            col1, col2, col3 = st.columns([2, 1, 1])
-            with col2:
-                st.download_button(
-                    "💾 Download DAX",
-                    final_dax,
-                    "narrative.dax",
-                    "text/plain",
-                    use_container_width=True
-                )
-            with col3:
-                if st.button("📋 Copy Code", use_container_width=True):
-                    st.toast("Copied to clipboard!")
-            
-            st.code(final_dax, language='dax', line_numbers=True)
-            
-        except Exception as e:
-            st.error(f"❌ Generation Error: {str(e)}")
-        
-        st.markdown("</div>", unsafe_allow_html=True)
-        
-        if st.button("← Start Over", use_container_width=True):
-            for key in list(st.session_state.keys()):
-                del st.session_state[key]
-            st.rerun()
+            st.markdown("</div>", unsafe_allow_html=True)
 
 if __name__ == "__main__":
     main()
